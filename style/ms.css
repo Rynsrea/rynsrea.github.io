@@ -1,0 +1,223 @@
+@font-face {
+   font-family: "vazir";
+   src: url(/font/Vazirmatn.ttf);
+}
+@font-face {
+   font-family: "Alis";
+   src: url(/font/Alis.ttf);
+}
+@font-face {
+   font-family: "PatrickHand";
+   src: url(/font/PatrickHand.ttf);
+}
+* {
+   box-sizing: border-box;
+   user-select: none;
+   font-family: "PatrickHand", "vazir";
+}
+::-webkit-scrollbar {
+   display: none;
+}
+img{
+   max-width: 100%;
+   border-radius: 8px;
+}
+body {
+   width: 100vw;
+   height: 100vh;
+   padding: 0;
+   margin: 0;
+   color: #fff;
+   background: linear-gradient(230deg, #000, #003);
+   background-position: center;
+   background-repeat: no-repeat;
+   
+}
+canvas {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100vw;
+   height: 100vh;
+   display: block;
+   margin: 0;
+   padding: 0;
+   z-index: -1;
+   background: transparent;
+   animation: zoomOut 1s both;
+}
+
+header{
+   width: 100%;
+   height: 70px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 16px;
+   backdrop-filter: blur(50px);
+   position: fixed;
+   top: 0;
+   z-index: 10;
+   animation: show 1s 1s forwards;
+   opacity: 0;
+}
+header span {
+   font-family: "Alis";
+   font-size: 32px;
+   font-weight: 900;
+   position: relative;
+   animation: up 1s var(--d) both;
+}
+
+main {
+   width: 100%;
+   padding: 16px;
+   padding-top: 86px;
+   padding-bottom: 86px;
+   height: 100%;
+   background: #fff0;
+   display: flex;
+   flex-flow: row wrap;
+   justify-content: start;
+   align-items: center;
+   overflow: auto;
+   position: relative;
+   animation: show 1s 3s both;
+}
+
+section{
+   width: 100%;
+}
+section div {
+   display: block;
+   padding: 5px;
+   animation: up 1s var(--d) both;
+}
+section div.L {
+   text-align: left;
+}
+section div.R {
+   text-align: right;
+}
+section div.C {
+   text-align: center;
+}
+section div.L div {
+   display: inline-block;
+   padding: 10px 20px;
+   background: #fff2;
+   color: #000;
+   max-width: 200px;
+   position: relative;
+   border-radius: 16px 16px 16px 0;
+   left: 20px;
+}
+section div.L div::after {
+   content: "";
+   display: inline-block;
+   width: 20px;
+   height: 20px;
+   background: #fff2;
+   position: absolute;
+   bottom: 0;
+   left: -20px;
+   mask: radial-gradient(circle at top left, #0000 20px, #000 20px);
+}
+section div.R div {
+   display: inline-block;
+   padding: 10px 20px;
+   background: #44f5;
+   color: #fffa;
+   max-width: 200px;
+   position: relative;
+   border-radius: 16px 16px 0 16px;
+   right: 20px;
+}
+section div.R div::after {
+   content: "";
+   display: inline-block;
+   width: 20px;
+   height: 20px;
+   background: #44f5;
+   position: absolute;
+   bottom: 0;
+   right: -20px;
+   mask: radial-gradient(circle at top right, #0000 20px, #000 20px);
+}
+section div.C div {
+   display: inline-block;
+   padding: 2px 20px;
+   background: #fff2;
+   color: #fffa;
+   max-width: 200px;
+   position: relative;
+   border-radius: 16px;
+}
+section div div small {
+   color: #fff;
+   opacity: 0.5;
+   margin: 0;
+   padding: 0;
+}
+section div div p {
+   direction: rtl;
+   color: #fff;
+   margin: 0;
+   padding: 0;
+}
+
+footer {
+   position: fixed;
+   backdrop-filter: blur(50px);
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   height: 70px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0 20px;
+   z-index: 10;
+   opacity: 0;
+   animation: show 1s 1s forwards;
+}
+footer m-icon {
+   width: 40px;
+   height: 40px;
+   transition: 0.3s;
+   color: #fff;
+   animation: up 1s 3.5s both;
+}
+footer m-icon:active {
+   scale: 0.9;
+   color: #44f;
+}
+
+@keyframes zoomOut {
+   from {
+      scale: 1.5;
+   }
+
+   to {
+      scale: 1;
+   }
+}
+@keyframes up {
+   from {
+      top: 100px;
+      opacity: 0;
+   }
+
+   to {
+      top: 0;
+      opacity: 1;
+   }
+}
+@keyframes show {
+   from {
+      opacity: 0;
+   }
+   to {
+      opacity: 1;
+   }
+}
