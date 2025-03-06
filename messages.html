@@ -1,0 +1,38 @@
+<html>
+
+<head>
+   <title>Messages</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="style/ms.css">
+</head>
+
+<body>
+   <!-- background -->
+   <canvas id="stars"></canvas>
+   <header>
+      <div>
+         <span style="--d: 1.2s">M</span>
+         <span style="--d: 1.4s">e</span>
+         <span style="--d: 1.6s">s</span>
+         <span style="--d: 1.8s">s</span>
+         <span style="--d: 2.0s">a</span>
+         <span style="--d: 2.2s">G</span>
+         <span style="--d: 2.4s">e</span>
+         <span style="--d: 2.6s">s</span>
+      </div>
+   </header>
+   <!-- main -->
+   <main></main>
+   <footer>
+      <m-icon onclick="showMessage(currentIndex - 1)" type="broken" icon="round-arrow-left"></m-icon>
+      <m-icon onclick="showMessage(currentIndex + 1)" type="broken" icon="round-arrow-right"></m-icon>
+   </footer>
+   <!-- script -->
+   <script src="script/ms.js"></script>
+   <script src="script/stars.js"></script>
+   <script src="script/m-icon.js"></script>
+</body>
+
+</html>
